@@ -388,6 +388,43 @@
   }
   .sticky-cta .btn{width:100%;max-width:520px;margin:0 auto;display:flex;}
 
+  .sound-toggle{
+    position:fixed;
+    right:1rem;
+    bottom:calc(96px + env(safe-area-inset-bottom));
+    z-index:20;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:color-mix(in srgb, var(--surface) 92%, transparent);
+    border:1px solid var(--border-strong);
+    color:var(--gold);
+    cursor:pointer;
+    box-shadow:var(--shadow);
+    transition:border-color 0.15s ease, transform 0.15s ease;
+    padding:0;
+  }
+  .sound-toggle:hover{border-color:var(--gold);}
+  .sound-toggle:active{transform:scale(0.94);}
+  .sound-toggle:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  .sound-toggle svg{width:20px;height:20px;}
+  .sound-toggle .icon-on{display:none;}
+  .sound-toggle.playing .icon-off{display:none;}
+  .sound-toggle.playing .icon-on{display:block;}
+  .sound-toggle.playing{
+    animation:sound-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes sound-pulse{
+    0%,100%{box-shadow:var(--shadow), 0 0 0 0 color-mix(in srgb, var(--gold) 35%, transparent);}
+    50%{box-shadow:var(--shadow), 0 0 0 7px color-mix(in srgb, var(--gold) 0%, transparent);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .sound-toggle.playing{animation:none;}
+  }
+
   @media (prefers-reduced-motion: reduce){
     .btn{transition:none;}
   }
@@ -481,6 +518,18 @@
     </div>
   </section>
 
+  <section id="redes">
+    <div class="wrap">
+      <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Comunidad</span>
+      <h2 class="section-title">Me seguían mucho antes del tarot</h2>
+      <div class="socials">
+        <a class="social-tile" href="https://www.facebook.com/lambertoclonic" target="_blank" rel="noopener noreferrer"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v6h3v-6h2.5l.5-4H14V8a1 1 0 0 1 1-1Z"/></svg></span><span class="count">6.2k</span><span class="name">Facebook</span></a>
+        <a class="social-tile" href="https://www.instagram.com/lambertoclonic" target="_blank" rel="noopener noreferrer"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></span><span class="count">15.3k</span><span class="name">Instagram</span></a>
+        <a class="social-tile" href="https://www.tiktok.com/@lambertoclonic" target="_blank" rel="noopener noreferrer"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v11.2a3.3 3.3 0 1 1-3-3.3"/><path d="M14 3c.5 2.3 2 3.8 4 4.2"/></svg></span><span class="count">29.8k</span><span class="name">TikTok</span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="servicios">
     <div class="wrap">
       <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Servicios</span>
@@ -563,17 +612,6 @@
     </div>
   </section>
 
-  <section id="redes">
-    <div class="wrap">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Comunidad</span>
-      <h2 class="section-title">Me seguían mucho antes del tarot</h2>
-      <div class="socials">
-        <a class="social-tile" href="https://www.facebook.com/lambertoclonic" target="_blank" rel="noopener noreferrer"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v6h3v-6h2.5l.5-4H14V8a1 1 0 0 1 1-1Z"/></svg></span><span class="count">6.2k</span><span class="name">Facebook</span></a>
-        <a class="social-tile" href="https://www.instagram.com/lambertoclonic" target="_blank" rel="noopener noreferrer"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></span><span class="count">15.3k</span><span class="name">Instagram</span></a>
-        <a class="social-tile" href="https://www.tiktok.com/@lambertoclonic" target="_blank" rel="noopener noreferrer"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v11.2a3.3 3.3 0 1 1-3-3.3"/><path d="M14 3c.5 2.3 2 3.8 4 4.2"/></svg></span><span class="count">29.8k</span><span class="name">TikTok</span></a>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -582,6 +620,11 @@
     <p class="credit">Web diseñada por Marc Borillo · <a href="https://plainsitestudio.com" target="_blank" rel="noopener noreferrer">Plain Site Studios</a></p>
   </div>
 </footer>
+
+<button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false" aria-label="Activar música ambiente">
+  <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 6v9.28a3 3 0 1 0 2 2.83V9l8-2v7.28"/><circle cx="7" cy="18" r="2.2"/><circle cx="17" cy="16" r="2.2"/></svg>
+  <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 6v9.28a3 3 0 1 0 2 2.83V9l8-2v7.28"/><circle cx="7" cy="18" r="2.2"/><circle cx="17" cy="16" r="2.2"/><path d="M20.2 5c1.3 1.5 1.3 4.9 0 6.4M22.3 3.2c2.2 2.4 2.2 8.2 0 10.6"/></svg>
+</button>
 
 <div class="sticky-cta">
   <a class="btn btn-primary" href="https://wa.me/34646716434?text=Hola%20Lamberto%2C%20quiero%20reservar%20una%20llamada%20de%20%5Bduraci%C3%B3n%5D%20el%20%5Bd%C3%ADa%5D%20sobre%20las%20%5Bhora%5D" target="_blank" rel="noopener noreferrer">Reservar llamada</a>
@@ -669,6 +712,103 @@
     }, {once:true});
   }
   setTimeout(finish, 4000);
+})();
+</script>
+
+<script>
+(function(){
+  var btn = document.getElementById('soundToggle');
+  if(!btn) return;
+  var ctx, masterGain, bus, chimeTimer;
+  var playing = false;
+
+  function makeDrone(){
+    var freqs = [110, 164.81, 220, 277.18];
+    freqs.forEach(function(f, i){
+      var osc = ctx.createOscillator();
+      osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+      osc.frequency.value = f;
+      var g = ctx.createGain();
+      g.gain.value = 0;
+      var target = i === 0 ? 0.09 : 0.05;
+      var lfo = ctx.createOscillator();
+      lfo.frequency.value = 0.04 + i * 0.015;
+      var lfoGain = ctx.createGain();
+      lfoGain.gain.value = target * 0.6;
+      lfo.connect(lfoGain);
+      lfoGain.connect(g.gain);
+      osc.connect(g);
+      g.connect(bus);
+      osc.start();
+      lfo.start();
+      g.gain.setTargetAtTime(target, ctx.currentTime, 3);
+    });
+  }
+
+  function playChime(){
+    var scale = [440, 493.88, 587.33, 659.25, 783.99, 880];
+    var f = scale[Math.floor(Math.random() * scale.length)];
+    var osc = ctx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.value = f;
+    var g = ctx.createGain();
+    g.gain.value = 0;
+    osc.connect(g);
+    g.connect(bus);
+    var now = ctx.currentTime;
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.07, now + 0.05);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + 3.2);
+    osc.start(now);
+    osc.stop(now + 3.3);
+  }
+
+  function scheduleChime(){
+    if(!playing) return;
+    var delay = 4000 + Math.random() * 6000;
+    chimeTimer = setTimeout(function(){
+      playChime();
+      scheduleChime();
+    }, delay);
+  }
+
+  function start(){
+    if(!ctx){
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      bus = ctx.createBiquadFilter();
+      bus.type = 'lowpass';
+      bus.frequency.value = 1500;
+      masterGain = ctx.createGain();
+      masterGain.gain.value = 0;
+      bus.connect(masterGain);
+      masterGain.connect(ctx.destination);
+      makeDrone();
+    }
+    if(ctx.state === 'suspended') ctx.resume();
+    playing = true;
+    masterGain.gain.setTargetAtTime(0.35, ctx.currentTime, 1.5);
+    scheduleChime();
+    btn.classList.add('playing');
+    btn.setAttribute('aria-pressed', 'true');
+    btn.setAttribute('aria-label', 'Silenciar música ambiente');
+  }
+
+  function stop(){
+    playing = false;
+    clearTimeout(chimeTimer);
+    if(masterGain) masterGain.gain.setTargetAtTime(0, ctx.currentTime, 0.6);
+    btn.classList.remove('playing');
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activar música ambiente');
+  }
+
+  btn.addEventListener('click', function(){
+    if(playing) stop(); else start();
+  });
+
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden && playing) stop();
+  });
 })();
 </script>
 </body>
