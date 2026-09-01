@@ -118,6 +118,22 @@
     max-width:60ch;
   }
 
+  .portrait{
+    width:min(230px, 62%);
+    margin:0 auto 1.9rem;
+    padding:10px;
+    background:linear-gradient(165deg, #f8f0e6, #ecdfc9);
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    transform:rotate(-2deg);
+  }
+  .portrait img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:3px;
+  }
+
   /* HERO */
   .hero{
     position:relative;
@@ -438,6 +454,9 @@
 <main>
   <section id="sobre">
     <div class="wrap">
+      <figure class="portrait">
+        <img src="img/lamberto-sobre-mi.png" alt="Retrato ilustrado de Lamberto" loading="lazy" width="800" height="1200">
+      </figure>
       <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Sobre mí</span>
       <h2 class="section-title">Coreógrafo, presentador y ahora guía</h2>
       <p class="lede">Llevo años acompañando a personas frente al público como coreógrafo, director de cabaré y rostro conocido de televisión. Hoy pongo esa misma intuición al servicio del tarot, la videncia y el crecimiento personal: te acompaño de forma individual, asesoro a empresas e imparto formaciones y talleres.</p>
