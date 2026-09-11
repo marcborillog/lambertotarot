@@ -25,7 +25,6 @@
     --border:rgba(244,233,228,0.10);
     --border-strong:rgba(244,233,228,0.18);
     --shadow:0 20px 50px rgba(0,0,0,0.45);
-    --unavailable:#3a2226;
   }
 
   *{box-sizing:border-box;}
@@ -82,6 +81,7 @@
     font-size:1rem;
     max-width:60ch;
   }
+  p.lede + p.lede{margin-top:0.9rem;}
 
   .portrait{
     width:min(240px, 64%);
@@ -233,6 +233,25 @@
   .rate-note .num{font-family:'IBM Plex Mono', monospace;font-size:1.3rem;color:var(--accent-strong);font-weight:500;}
   .rate-note .label{color:var(--text-muted);font-size:0.88rem;}
 
+  .trust-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem;
+    margin:-0.6rem 0 1.2rem;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.35rem;
+    font-size:0.78rem;
+    color:var(--text-muted);
+    background:var(--surface);
+    border:1px solid var(--border);
+    padding:0.35rem 0.7rem;
+    border-radius:999px;
+  }
+  .badge svg{width:12px;height:12px;flex:none;color:var(--gold);}
+
   .price-table{
     width:100%;
     border-collapse:collapse;
@@ -285,48 +304,6 @@
     box-shadow:var(--shadow);
   }
   .book-cta p{color:var(--text-muted);font-size:0.85rem;margin:0.7rem 0 0;}
-
-  /* HORARIO */
-  .schedule{
-    display:flex;
-    flex-direction:column;
-    gap:0.5rem;
-  }
-  .day-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:0.75rem;
-    padding:0.8rem 1rem;
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:10px;
-  }
-  .day-row .day{font-weight:700;font-size:0.92rem;}
-  .day-row .slots{
-    display:flex;
-    flex-wrap:wrap;
-    gap:0.4rem;
-    justify-content:flex-end;
-  }
-  .slot{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.76rem;
-    padding:0.3rem 0.55rem;
-    border-radius:999px;
-    background:color-mix(in srgb, var(--accent) 16%, transparent);
-    color:var(--accent-strong);
-    white-space:nowrap;
-  }
-  .slot.off{
-    background:var(--unavailable);
-    color:var(--text-faint);
-  }
-  .schedule-note{
-    margin-top:1rem;
-    font-size:0.85rem;
-    color:var(--text-faint);
-  }
 
   /* REDES */
   .socials{
@@ -500,7 +477,7 @@
     <h1>Lambertotarot<small>El coach de las estrellas</small></h1>
     <p>Te ayudo a ver con claridad a través del tarot, la videncia y el acompañamiento personal — desde la comodidad de una llamada.</p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="#reservar">Reservar llamada</a>
+      <a class="btn btn-primary" href="https://wa.me/34646716434?text=Hola%20Lamberto%2C%20quiero%20reservar%20una%20llamada%20de%20%5Bduraci%C3%B3n%5D%20el%20%5Bd%C3%ADa%5D%20sobre%20las%20%5Bhora%5D" target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
       <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
     </div>
   </div>
@@ -513,8 +490,9 @@
         <img src="img/lamberto-tarot-card.png" alt="Carta de tarot ilustrada de Lamberto García" loading="lazy" width="800" height="1201">
       </figure>
       <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Sobre mí</span>
-      <h2 class="section-title">Coreógrafo, presentador y ahora guía</h2>
-      <p class="lede">Llevo años acompañando a personas frente al público como coreógrafo, director de cabaré y rostro conocido de televisión. Hoy pongo esa misma intuición al servicio del tarot, la videncia y el crecimiento personal: te acompaño de forma individual, asesoro a empresas e imparto formaciones y talleres.</p>
+      <h2 class="section-title">Tarotista de casta</h2>
+      <p class="lede">Tarotista de casta, herencia desde hace varias generaciones, interesado por el ser humano en todos sus aspectos. Ejerzo como vidente desde hace 40 años.</p>
+      <p class="lede">Otros estudios: Programación Neurolingüística, Hipnosis Ericksoniana y otras artes.</p>
     </div>
   </section>
 
@@ -566,8 +544,13 @@
   <section id="precios">
     <div class="wrap">
       <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Precios</span>
-      <h2 class="section-title">Precio único, sin sorpresas</h2>
-      <div class="rate-note"><span class="num">1€</span><span class="label">por minuto de llamada</span></div>
+      <h2 class="section-title">Tarifa única</h2>
+      <div class="rate-note"><span class="num">1€</span><span class="label">por minuto</span></div>
+      <div class="trust-badges">
+        <span class="badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Sin permanencia</span>
+        <span class="badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Sin costes ocultos</span>
+      </div>
+      <p class="lede">Elige la duración que mejor se adapte a tu consulta.</p>
       <table class="price-table">
         <tbody>
           <tr><td class="dur">10 minutos<span>Consulta breve</span></td><td class="amt">10€</td></tr>
@@ -583,15 +566,15 @@
   <section id="reservar">
     <div class="wrap">
       <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Reservar</span>
-      <h2 class="section-title">Reserva tu llamada</h2>
-      <div class="steps">
-        <div class="step"><span class="n">1</span><div><h3>Elige duración y horario</h3><p>Consulta mi disponibilidad más abajo y elige el hueco que mejor te encaje.</p></div></div>
-        <div class="step"><span class="n">2</span><div><h3>Paga por adelantado con Bizum</h3><p>Confirmo tu reserva en cuanto recibo el pago.</p></div></div>
-        <div class="step"><span class="n">3</span><div><h3>Recibe tu llamada</h3><p>Te llamo en el horario acordado, sin esperas.</p></div></div>
+      <h2 class="section-title">Reserva tu sesión</h2>
+      <p class="lede">Obtén claridad y orientación personalizada en una consulta privada, recibe respuestas concretas a tus inquietudes.</p>
+      <div class="steps" style="margin-top:1.6rem;">
+        <div class="step"><span class="n">1</span><p>Elige la duración de tu sesión.</p></div>
+        <div class="step"><span class="n">2</span><p>Escribe a nuestro WhatsApp y enseguida te contactaremos para agendar tu sesión.</p></div>
+        <div class="step"><span class="n">3</span><p>Pago por bizum antes del inicio de la sesión programada.</p></div>
       </div>
       <div class="book-cta">
         <a class="btn btn-primary" style="width:100%;" href="https://wa.me/34646716434?text=Hola%20Lamberto%2C%20quiero%20reservar%20una%20llamada%20de%20%5Bduraci%C3%B3n%5D%20el%20%5Bd%C3%ADa%5D%20sobre%20las%20%5Bhora%5D" target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
-        <p>Pago exclusivamente por Bizum. Sin Bizum, no puedo confirmar la reserva.</p>
       </div>
     </div>
   </section>
@@ -599,16 +582,9 @@
   <section id="horario">
     <div class="wrap">
       <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Horario</span>
-      <h2 class="section-title">Disponibilidad esta temporada</h2>
-      <div class="schedule">
-        <div class="day-row"><span class="day">Lunes</span><span class="slots"><span class="slot">16:00–18:00</span><span class="slot">20:00–21:00</span></span></div>
-        <div class="day-row"><span class="day">Martes</span><span class="slots"><span class="slot">16:00–18:00</span><span class="slot">20:00–21:00</span></span></div>
-        <div class="day-row"><span class="day">Miércoles</span><span class="slots"><span class="slot">16:00–18:00</span><span class="slot">20:00–21:00</span></span></div>
-        <div class="day-row"><span class="day">Jueves</span><span class="slots"><span class="slot">08:00–12:00</span></span></div>
-        <div class="day-row"><span class="day">Viernes</span><span class="slots"><span class="slot">16:00–18:00</span><span class="slot">20:00–21:00</span></span></div>
-        <div class="day-row"><span class="day">Fin de semana</span><span class="slots"><span class="slot off">No disponible</span></span></div>
-      </div>
-      <p class="schedule-note">Agenda limitada mientras compagino las consultas con otros compromisos profesionales. Iré ampliando las franjas poco a poco.</p>
+      <h2 class="section-title">Consulta con cita previa</h2>
+      <p class="lede">Los horarios concretos se confirman por WhatsApp.</p>
+      <p class="lede">Las plazas son limitadas para garantizar una atención personalizada en cada consulta.</p>
     </div>
   </section>
 
@@ -627,7 +603,7 @@
 </button>
 
 <div class="sticky-cta">
-  <a class="btn btn-primary" href="https://wa.me/34646716434?text=Hola%20Lamberto%2C%20quiero%20reservar%20una%20llamada%20de%20%5Bduraci%C3%B3n%5D%20el%20%5Bd%C3%ADa%5D%20sobre%20las%20%5Bhora%5D" target="_blank" rel="noopener noreferrer">Reservar llamada</a>
+  <a class="btn btn-primary" href="https://wa.me/34646716434?text=Hola%20Lamberto%2C%20quiero%20reservar%20una%20llamada%20de%20%5Bduraci%C3%B3n%5D%20el%20%5Bd%C3%ADa%5D%20sobre%20las%20%5Bhora%5D" target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
 </div>
 
 <script>
