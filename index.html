@@ -252,24 +252,6 @@
   }
   .badge svg{width:12px;height:12px;flex:none;color:var(--gold);}
 
-  .price-table{
-    width:100%;
-    border-collapse:collapse;
-    font-variant-numeric:tabular-nums;
-  }
-  .price-table tr{border-bottom:1px solid var(--border);}
-  .price-table tr:last-child{border-bottom:none;}
-  .price-table td{padding:0.85rem 0.2rem;}
-  .price-table td.dur{color:var(--text);font-weight:600;font-size:0.98rem;}
-  .price-table td.dur span{color:var(--text-faint);font-weight:400;font-size:0.82rem;display:block;margin-top:0.1rem;font-family:'Manrope',sans-serif;}
-  .price-table td.amt{
-    text-align:right;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:1.05rem;
-    color:var(--accent-strong);
-    font-weight:500;
-  }
-
   /* PASOS */
   .steps{
     display:flex;
@@ -551,15 +533,6 @@
         <span class="badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Sin costes ocultos</span>
       </div>
       <p class="lede">Elige la duración que mejor se adapte a tu consulta.</p>
-      <table class="price-table">
-        <tbody>
-          <tr><td class="dur">10 minutos<span>Consulta breve</span></td><td class="amt">10€</td></tr>
-          <tr><td class="dur">15 minutos<span>Una pregunta a fondo</span></td><td class="amt">15€</td></tr>
-          <tr><td class="dur">30 minutos<span>Lectura completa</span></td><td class="amt">30€</td></tr>
-          <tr><td class="dur">45 minutos<span>Sesión de acompañamiento</span></td><td class="amt">45€</td></tr>
-          <tr><td class="dur">60 minutos<span>Sesión extendida</span></td><td class="amt">60€</td></tr>
-        </tbody>
-      </table>
     </div>
   </section>
 
