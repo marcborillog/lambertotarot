@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Reserva confirmada — Lambertotarot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Manrope:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#150709; --surface:#211014; --text:#f4e9e4; --text-muted:#c8a8a2;
+    --accent:#c9203c; --accent-strong:#e8384f; --gold:#c8a35f; --border:rgba(244,233,228,0.10);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; min-height:100svh; display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(60% 50% at 50% 15%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%), var(--bg);
+    color:var(--text); font-family:'Manrope', system-ui, sans-serif; line-height:1.6; padding:2rem 1.25rem;
+  }
+  .card{max-width:420px; text-align:center;}
+  .glyph{width:56px; margin:0 auto 1.5rem; display:block; color:var(--gold);}
+  h1{font-family:'Cinzel', Georgia, serif; font-size:1.6rem; margin:0 0 0.9rem; text-wrap:balance;}
+  p{color:var(--text-muted); margin:0 0 1.6rem;}
+  a.btn{
+    display:inline-flex; padding:0.9rem 1.6rem; border-radius:999px; font-weight:700;
+    background:linear-gradient(180deg, var(--accent-strong), var(--accent)); color:#fff8f6; text-decoration:none;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <svg class="glyph" viewBox="0 0 64 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="60" height="92" rx="8" stroke="currentColor" stroke-width="2"/>
+      <circle cx="32" cy="40" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M25 41l5 5 10-11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <h1>Pago recibido, reserva confirmada</h1>
+    <p>En unos minutos recibirás un email de Cal.com con la fecha, la hora y el enlace para la consulta online. Si no lo ves, revisa spam.</p>
+    <a class="btn" href="/">Volver a la web</a>
+  </div>
+</body>
+</html>

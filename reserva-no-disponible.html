@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Reserva no disponible — Lambertotarot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Manrope:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#150709; --text:#f4e9e4; --text-muted:#c8a8a2;
+    --accent:#c9203c; --accent-strong:#e8384f; --gold:#c8a35f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; min-height:100svh; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); color:var(--text); font-family:'Manrope', system-ui, sans-serif;
+    line-height:1.6; padding:2rem 1.25rem;
+  }
+  .card{max-width:420px; text-align:center;}
+  h1{font-family:'Cinzel', Georgia, serif; font-size:1.6rem; margin:0 0 0.9rem; color:var(--gold); text-wrap:balance;}
+  p{color:var(--text-muted); margin:0 0 1.6rem;}
+  a.btn{
+    display:inline-flex; padding:0.9rem 1.6rem; border-radius:999px; font-weight:700;
+    background:linear-gradient(180deg, var(--accent-strong), var(--accent)); color:#fff8f6; text-decoration:none;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Esta reserva ya no está disponible</h1>
+    <p>Puede que ya se haya pagado, cancelado o caducado. Elige un nuevo hueco y vuelve a intentarlo.</p>
+    <a class="btn" href="/reservar.html">Ver disponibilidad</a>
+  </div>
+</body>
+</html>
