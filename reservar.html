@@ -40,9 +40,11 @@
   <noscript>Activa JavaScript para ver el calendario de reservas, o escríbenos directamente.</noscript>
 
   <script type="text/javascript">
-    /* TODO: sustituir "PENDIENTE-configurar" por el usuario real de Cal.com
-       (Lamberto -> Settings -> Username) en cuanto exista la cuenta. */
-    var CALCOM_USERNAME = "PENDIENTE-configurar";
+    /* DEMO: cuenta de Marc en Cal.com, con un único evento de prueba.
+       Cuando Lamberto tenga su propia cuenta con los 5 eventos (10/15/30/45/60 min),
+       este valor pasa a ser solo su username (sin "/evento"), para que el
+       cliente vea la lista completa de duraciones al entrar. */
+    var CALCOM_LINK = "marc-borillo-garcia-uyaoaf/consulta-tarot-30-min";
 
     (function (C, A, L) {
       let p = function (a, ar) { a.q.push(ar); };
@@ -74,7 +76,7 @@
     Cal("init", { origin: "https://cal.com" });
     Cal("inline", {
       elementOrSelector: "#cal-booking",
-      calLink: CALCOM_USERNAME,
+      calLink: CALCOM_LINK,
       layout: "month_view",
       config: { theme: "dark" },
     });
@@ -82,6 +84,23 @@
       theme: "dark",
       styles: { branding: { brandColor: "#c9203c" } },
       hideEventTypeDetails: false,
+    });
+
+    // No usamos la redirección de pago propia de Cal.com (es una función de
+    // pago de su plan Team). En su lugar, escuchamos el evento del propio
+    // embed que se dispara al completar la reserva, y llevamos al cliente a
+    // nuestra pasarela de Stripe nosotros mismos.
+    Cal("on", {
+      action: "bookingSuccessfulV2",
+      callback: function (e) {
+        var data = e.detail.data;
+        if (!data || !data.uid) return;
+        var minutos = 30;
+        if (data.startTime && data.endTime) {
+          minutos = Math.round((new Date(data.endTime) - new Date(data.startTime)) / 60000);
+        }
+        window.location.href = "/api/pagar?bookingUid=" + encodeURIComponent(data.uid) + "&duration=" + minutos;
+      },
     });
   </script>
 </body>
