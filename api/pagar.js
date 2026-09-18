@@ -34,11 +34,10 @@ module.exports = async (req, res) => {
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
-      // Dejamos que Stripe ofrezca automáticamente los métodos activos en la
-      // cuenta (tarjeta ya, Bizum en cuanto se active en el Dashboard) en vez
-      // de pedir una lista fija — así no hace falta tocar código cuando se
-      // active Bizum, y nunca falla por pedir un método aún no habilitado.
-      automatic_payment_methods: { enabled: true },
+      // Sin "payment_method_types": Checkout ofrece automáticamente los
+      // métodos activos en la cuenta (tarjeta ya, Bizum en cuanto se active
+      // en el Dashboard) — así no hace falta tocar código al activar Bizum,
+      // y nunca falla por pedir un método que aún no está habilitado.
       customer_email: attendee.email || undefined,
       line_items: [
         {
