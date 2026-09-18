@@ -97,6 +97,22 @@
     height:auto;
   }
 
+  .welcome-video{
+    max-width:300px;
+    margin:0 auto;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border-strong);
+    background:var(--surface);
+  }
+  .welcome-video video{
+    display:block;
+    width:100%;
+    aspect-ratio:478/850;
+    background:#000;
+  }
+
   /* HERO */
   .hero{
     position:relative;
@@ -482,6 +498,18 @@
 </header>
 
 <main>
+  <section id="bienvenida">
+    <div class="wrap">
+      <span class="eyebrow"><svg class="star" viewBox="0 0 10 10"><path d="M5 0l1 3.2L9 4l-3 1.2L5 8.4 4 5.2 1 4l3-.8Z" fill="currentColor"/></svg>Bienvenida</span>
+      <h2 class="section-title">Un mensaje para ti</h2>
+      <div class="welcome-video">
+        <video controls playsinline preload="metadata" poster="video/bienvenida-poster.jpg">
+          <source src="video/bienvenida.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
   <section id="sobre">
     <div class="wrap">
       <figure class="portrait">
